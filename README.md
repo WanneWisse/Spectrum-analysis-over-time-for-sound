@@ -2,6 +2,8 @@
 This is a hobby project where the goal is to create an animation of sound. This animation is based on the frequencies and their corresponding amplitude. 
 At the moment I have created a soundbar animation. Which can be sound in the underneath figure.
 
+![alt text](https://github.com/WanneWisse/Spectrum-analysis-over-time-for-sound/blob/master/soundbars.PNG?raw=true)
+
 ## Spectrum part
 Before creating the animation you first need to get the frequencies and amplitudes. This can be done using a Fast Fourier Transform. 
 ### Implementation
