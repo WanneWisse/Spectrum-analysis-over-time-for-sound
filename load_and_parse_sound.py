@@ -26,7 +26,7 @@ def get_spectrum(block,fs,N_soundbar,top_N_frequencies,normalisation_value):
 
     
 #load song and get the blocks with the f and their corresponding value or amplitude
-def load_song(filename, stereo, N_blocks,N_soundbar):
+def load_song(filename, stereo, N_blocks,N_soundbar,top_N_frequencies,normalisation_value):
     # Extract data and sampling rate from file
     data, fs = sf.read(filename, dtype='float32')  
     if stereo:
@@ -36,7 +36,7 @@ def load_song(filename, stereo, N_blocks,N_soundbar):
     blocks = []
     for sample_index in range(0,len(data),block_size):
         block = data[sample_index:sample_index+block_size]
-        frequencies,values = get_spectrum(block,fs,N_soundbar)
+        frequencies,values = get_spectrum(block,fs,N_soundbar,top_N_frequencies,normalisation_value)
         blocks.append([frequencies,values])
     return data,fs,blocks
 

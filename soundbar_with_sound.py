@@ -8,6 +8,10 @@ SCREEN_HEIGHT = 500
 FRAME_RATE = 20
 N_SOUNDBAR = 40
 FILENAME = "test.mp3"
+STEREO = True
+TOP_N_FREQUENCIES = 200
+NORMALISATION_VALUE = 3
+
 BLUE = (0, 0, 255)
 
 pygame.init()
@@ -22,7 +26,7 @@ class SoundBar():
         self.amplitude = []#samples per second 
 
 soundbars = []
-data, fs, blocks = load_song(FILENAME,True,FRAME_RATE,N_SOUNDBAR)
+data, fs, blocks = load_song(FILENAME,STEREO,FRAME_RATE,N_SOUNDBAR,TOP_N_FREQUENCIES,NORMALISATION_VALUE)
 soundbar_range = np.linspace(20,990,N_SOUNDBAR)
 #set position
 for i in soundbar_range:
